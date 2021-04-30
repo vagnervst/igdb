@@ -1,5 +1,9 @@
-const App = () => (
-  <h1>Hello, Next JS!</h1>
+import { Button } from '@chakra-ui/react'
+
+const Home = () => (
+  <Button>
+    I just consumed some ⚡️Chakra!
+  </Button>
 )
 
-export default App
+export default Home
