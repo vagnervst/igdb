@@ -23,7 +23,7 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
   const query = new URLSearchParams(req.query.toString())
 
   query.append('fields', fields.join(','))
-  query.append('search', 'Grand Theft Auto')
+  query.append('search', 'Nier')
 
   const response = await buildRequest('games', query)
 

@@ -17,7 +17,7 @@ const Home = () => {
   return (
     <Box p={4}>
       <Flex>
-        <Input placeholder="Search game" />
+        <Input variant="filled" placeholder="Search game" />
         <Button ml={4}>Search</Button>
       </Flex>
       <Flex p={4} wrap="wrap" justifyContent="center">

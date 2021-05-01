@@ -4,7 +4,7 @@ import { SWRConfig } from 'swr'
 
 import fetcher from '../utils/fetcher'
 
-import theme from '../styles/theme'
+import theme from '../theme'
 
 const App = ({ Component, pageProps }: AppProps) => (
   <ChakraProvider theme={theme}>
