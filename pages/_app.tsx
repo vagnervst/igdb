@@ -1,11 +1,21 @@
 import { ChakraProvider } from '@chakra-ui/react'
 import { AppProps } from 'next/app'
+import { SWRConfig } from 'swr'
+
+import fetcher from '../utils/fetcher'
 
 import theme from '../styles/theme'
 
 const App = ({ Component, pageProps }: AppProps) => (
   <ChakraProvider theme={theme}>
-    <Component {...pageProps} />
+    <SWRConfig
+      value={{
+        shouldRetryOnError: false,
+        fetcher,
+      }}
+    >
+      <Component {...pageProps} />
+    </SWRConfig>
   </ChakraProvider>
 )
 
