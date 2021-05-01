@@ -20,10 +20,9 @@ const build = data => data.map(game => {
 })
 
 export default async (req: NextApiRequest, res: NextApiResponse) => {
-  const query = new URLSearchParams(req.query.toString())
+  const query = new URLSearchParams(req.query as Record<string, string>)
 
   query.append('fields', fields.join(','))
-  query.append('search', 'Nier')
 
   const response = await buildRequest('games', query)
 

@@ -1,39 +1,22 @@
-import {
-  Button,
-  Box,
-  Flex,
-  Input,
-} from '@chakra-ui/react'
+import { useState } from 'react'
 import useSWR from 'swr'
 
-import GameCard from '../components/GameCard'
+import HomeContainer from '../containers/Home'
 
 const Home = () => {
-  const { data, error } = useSWR('/api/games')
+  const [search, setSearch] = useState('')
+  const { data, error } = useSWR(`/api/games?search=${search}`)
 
-  if (error) return <div>Failed to load</div>
-  if (!data) return <div>Loading...</div>
+  const searchGame = (values: { search: string }) => {
+    setSearch(values.search)
+  }
 
   return (
-    <Box p={4}>
-      <Flex>
-        <Input variant="filled" placeholder="Search game" />
-        <Button ml={4}>Search</Button>
-      </Flex>
-      <Flex p={4} wrap="wrap" justifyContent="center">
-        {data.map(({ cover, id, name }) => (
-          <Box m={2}>
-            <GameCard
-              key={id}
-              image={{
-                url: cover.url,
-                alt: name,
-              }}
-            />
-          </Box>
-        ))}
-      </Flex>
-    </Box>
+    <HomeContainer
+      data={data}
+      error={error}
+      onSearch={searchGame}
+    />
   )
 }
 

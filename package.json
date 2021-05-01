@@ -13,6 +13,7 @@
     "@emotion/babel-preset-css-prop": "11.2.0",
     "@emotion/react": "11",
     "@emotion/styled": "11",
+    "formik": "2.2.6",
     "framer-motion": "4",
     "next": "10.2.0",
     "ramda": "0.27.1",
