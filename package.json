@@ -5,7 +5,9 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start"
+    "start": "next start",
+    "cypress:open": "cypress open",
+    "cypress:run": "cypress run"
   },
   "dependencies": {
     "@babel/core": "7.14.0",
@@ -24,6 +26,7 @@
   },
   "devDependencies": {
     "@types/react": "17.0.4",
+    "cypress": "7.2.0",
     "typescript": "4.2.4"
   }
 }
